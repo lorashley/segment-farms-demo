@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import React, {useState} from "react";
+import * as React from "react";
 import CheckoutAlert from "./CheckoutAlert";
 
 export default function Cart(props) {
@@ -14,13 +14,11 @@ export default function Cart(props) {
     setOpen(false);
   };
 
-  const [cartTotal, setCartTotal] = useState(0)
-
   const subtotal = (item) => {
     return item.qty * item.price
   }
 
-  const total = cart.reduce((a, c) => a + c.price*c.qty, 0)
+  const total = cart.reduce((a, c) => a + c.price * c.qty, 0)
 
   return (
     <>
@@ -29,18 +27,18 @@ export default function Cart(props) {
       {cart.length > 0 &&
         cart.map((item) => (
           <div key={item.name} align="left">
-            
-            
+
+
             {item.name} x {item.qty}{" "} = ${subtotal(item)}
             <Button onClick={() => onAdd(item)}>Add</Button>
             <Button onClick={() => onRemove(item)}>Remove</Button>
-            
+
           </div>
         ))
-        }
-        {cart.length > 0 && <><br/><Button variant="contained" onClick={handleClickOpen}>Checkout ${total}</Button></>}
-        <CheckoutAlert open={open}
-        onClose={handleClose}/>
+      }
+      {cart.length > 0 && <><br /><Button variant="contained" onClick={handleClickOpen}>Checkout ${total}</Button></>}
+      <CheckoutAlert open={open}
+        onClose={handleClose} />
     </>
   );
 }

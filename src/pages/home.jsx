@@ -18,7 +18,7 @@ const veggieArray = [
   { name: "Potatoe", price: "1", img: p4 },
   { name: "Cabbage", price: "4", img: p6 },
   { name: "Eggplant", price: "4", img: p2 },
-  
+
 ];
 
 export default function Home() {
@@ -34,8 +34,8 @@ export default function Home() {
       );
     } else setCart([...cart, { ...product, qty: 1 }]);
     window.analytics.track("Added Product", {
-        product: product
-      });
+      product: product
+    });
   };
 
   const onRemove = (product) => {
@@ -52,15 +52,15 @@ export default function Home() {
       }
     }
     window.analytics.track("Removed Product", {
-        product: product
-      });
+      product: product
+    });
   };
 
 
   return (
     <Box>
       <Grid container spacing={4}>
-      <Grid item xs={1}></Grid>
+        <Grid item xs={1}></Grid>
         <Grid item xs={7}>
           <Grid item xs={12}>
             <h1 className="title">Our Veggies</h1>
@@ -82,7 +82,7 @@ export default function Home() {
           <Cart cart={cart} onAdd={onAdd} onRemove={onRemove} />
         </Grid>
       </Grid>
-      
+
     </Box>
   );
 }
