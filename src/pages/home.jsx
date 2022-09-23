@@ -25,7 +25,7 @@ export default function Home() {
   const [cart, setCart] = useState([]);
 
   const onAdd = (product) => {
-    const exist = cart.find((x) => x.name == product.name);
+    const exist = cart.find((x) => x.name === product.name);
     if (exist) {
       setCart(
         cart.map((x) =>
@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   const onRemove = (product) => {
-    const exist = cart.find((x) => x.name == product.name);
+    const exist = cart.find((x) => x.name === product.name);
     if (exist) {
       if (exist.qty === 1) {
         setCart(cart.filter((x) => x.name !== product.name));
