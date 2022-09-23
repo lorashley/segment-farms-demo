@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import CheckoutAlert from "./CheckoutAlert";
 
 export default function Cart(props) {
-  const { cart, onAdd, onRemove } = props;
+  const { cart, onAdd, onRemove, onPay } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -13,8 +13,6 @@ export default function Cart(props) {
   const handleClose = () => {
     setOpen(false);
   };
-
-  const [cartTotal, setCartTotal] = useState(0)
 
   const subtotal = (item) => {
     return item.qty * item.price
@@ -40,7 +38,7 @@ export default function Cart(props) {
         }
         {cart.length > 0 && <><br/><Button variant="contained" onClick={handleClickOpen}>Checkout ${total}</Button></>}
         <CheckoutAlert open={open}
-        onClose={handleClose}/>
+        onClose={handleClose} onPay={onPay}/>
     </>
   );
 }

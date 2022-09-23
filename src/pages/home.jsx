@@ -56,6 +56,15 @@ export default function Home() {
       });
   };
 
+  const onPay = () => {
+    window.analytics.track("Order Placed", {
+      cart: cart
+    });
+    setCart([])
+  }
+
+
+
 
   return (
     <Box>
@@ -79,7 +88,7 @@ export default function Home() {
         </Grid>
         <Grid item xs={1}></Grid>
         <Grid item xs={3}>
-          <Cart cart={cart} onAdd={onAdd} onRemove={onRemove} />
+          <Cart cart={cart} onAdd={onAdd} onRemove={onRemove} onPay={onPay} />
         </Grid>
       </Grid>
       
