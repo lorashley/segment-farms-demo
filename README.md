@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# Segment Farms Demo
+
+This is a simple ecommerce demo showing the integration of Segment.
+This uses:
+
+- spec: page
+- spec: track
+  - Product Added
+  - Product Removed
+
+# Installation
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
