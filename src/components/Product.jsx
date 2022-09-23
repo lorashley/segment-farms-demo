@@ -11,19 +11,17 @@ export default function Product(props) {
 
   return (
     <Card>
-      <CardHeader
-        title={product.name + " $" + product.price}
-      />
+      <CardHeader title={product.name + " $" + product.price} />
       <CardMedia
         component="img"
         height="100"
         image={product.img}
         alt={product.name}
-        sx={{ objectFit:"scale-down"}}
+        sx={{ objectFit: "scale-down" }}
       />
-      <CardActions sx={{ justifyContent: 'flex-end' }}>
+      <CardActions sx={{ justifyContent: "flex-end" }}>
         <Button size="small" color="primary" onClick={() => onAdd(product)}>
-        ADD TO CART
+          ADD TO CART
         </Button>
       </CardActions>
     </Card>

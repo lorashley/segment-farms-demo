@@ -15,16 +15,16 @@ export default function Cart(props) {
   };
 
   const subtotal = (item) => {
-    return item.qty * item.price
-  }
+    return item.qty * item.price;
+  };
 
-  const total = cart.reduce((a, c) => a + c.price * c.qty, 0)
+  const total = cart.reduce((a, c) => a + c.price * c.qty, 0);
 
   const handlePayment = () => {
-    console.log(total)
-    onPay(total)
-    handleClose()
-  }
+    console.log(total);
+    onPay(total);
+    handleClose();
+  };
 
   return (
     <>
@@ -33,18 +33,25 @@ export default function Cart(props) {
       {cart.length > 0 &&
         cart.map((item) => (
           <div key={item.name} align="left">
-
-
-            {item.name} x {item.qty}{" "} = ${subtotal(item)}
+            {item.name} x {item.qty} = ${subtotal(item)}
             <Button onClick={() => onAdd(item)}>Add</Button>
             <Button onClick={() => onRemove(item)}>Remove</Button>
-
           </div>
-        ))
-        }
-        {cart.length > 0 && <><br/><Button variant="contained" onClick={handleClickOpen}>Checkout ${total}</Button></>}
-        <CheckoutAlert open={open}
-        onClose={handleClose} onCancel={()=> handleClose()} onPay={handlePayment}/>
+        ))}
+      {cart.length > 0 && (
+        <>
+          <br />
+          <Button variant="contained" onClick={handleClickOpen}>
+            Checkout ${total}
+          </Button>
+        </>
+      )}
+      <CheckoutAlert
+        open={open}
+        onClose={handleClose}
+        onCancel={() => handleClose()}
+        onPay={handlePayment}
+      />
     </>
   );
 }

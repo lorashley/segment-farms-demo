@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Switch, Route } from "wouter";
 import Home from "../pages/home";
+import SignIn from "../pages/signin";
 import FullCart from "../pages/fullCart";
 
 /**
@@ -14,6 +15,8 @@ import FullCart from "../pages/fullCart";
 export default () => (
   <Switch>
     <Route path="/" component={Home} />
+    <Route path="/dashboard" component={Home} />
+    <Route path="/login" component={SignIn} />
     <Route path="/cart" component={FullCart} />
   </Switch>
 );

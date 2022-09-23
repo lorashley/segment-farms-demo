@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Product from "../components/Product";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 
 import p1 from "../images/p1.png";
@@ -10,6 +11,11 @@ import p4 from "../images/p4.png";
 import p5 from "../images/p5.png";
 import p6 from "../images/p6.png";
 import Cart from "../components/Cart";
+import { Link } from "wouter";
+
+import Userfront from "@userfront/react";
+
+Userfront.init("xbppgjwb");
 
 const veggieArray = [
   { name: "Tomato", price: "2", img: p1 },
@@ -18,11 +24,10 @@ const veggieArray = [
   { name: "Potatoe", price: "1", img: p4 },
   { name: "Cabbage", price: "4", img: p6 },
   { name: "Eggplant", price: "4", img: p2 },
-
 ];
 
 export default function Home() {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
 
   const onAdd = (product) => {
     const exist = cart.find((x) => x.name === product.name);
@@ -34,7 +39,7 @@ export default function Home() {
       );
     } else setCart([...cart, { ...product, qty: 1 }]);
     window.analytics.track("Added Product", {
-      product: product
+      product: product,
     });
   };
 
@@ -52,20 +57,24 @@ export default function Home() {
       }
     }
     window.analytics.track("Removed Product", {
-      product: product
+      product: product,
     });
   };
 
   const onPay = (total) => {
     window.analytics.track("Order Placed", {
       total: total,
-      cart: cart
+      cart: cart,
     });
-    setCart([])
-  }
+    setCart([]);
+  };
 
-
-
+  //When the user logs in, call the Segment Identify
+  useEffect(() => {
+    window.analytics.identify(Userfront.user.email, {
+      userData: Userfront.user,
+    });
+  });
 
   return (
     <Box>
@@ -89,10 +98,22 @@ export default function Home() {
         </Grid>
         <Grid item xs={1}></Grid>
         <Grid item xs={3}>
+          {Userfront.user?.name ? (
+            <>
+              <h2>
+                {" "}
+                Welcome {Userfront.user.name}!{" "}
+                <Button onClick={Userfront.logout}>Logout</Button>
+              </h2>{" "}
+            </>
+          ) : (
+            <Link to="/login">
+              <h2>Login</h2>
+            </Link>
+          )}
           <Cart cart={cart} onAdd={onAdd} onRemove={onRemove} onPay={onPay} />
         </Grid>
       </Grid>
-
     </Box>
   );
 }

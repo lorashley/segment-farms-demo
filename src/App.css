@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
 
 .App {
   text-align: center;
@@ -30,8 +30,9 @@
   color: #61dafb;
 }
 
-h1 {
-  font-family: 'Permanent Marker';
+h1,
+h2 {
+  font-family: "Permanent Marker";
 }
 
 @keyframes App-logo-spin {
