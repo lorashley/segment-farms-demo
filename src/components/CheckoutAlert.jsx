@@ -22,8 +22,8 @@ export default function CheckoutAlert(props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={props.handleClose}>Cancel</Button>
-          <Button onClick={props.handleClose} autoFocus>
+          <Button onClick={props.onCancel}>Cancel</Button>
+          <Button onClick={props.onPay} autoFocus>
             Pay
           </Button>
         </DialogActions>
