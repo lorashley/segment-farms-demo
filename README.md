@@ -7,6 +7,7 @@ This uses:
 - spec: track
   - Product Added
   - Product Removed
+- spec: identify
 
 # Installation
 
