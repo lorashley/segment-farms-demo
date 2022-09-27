@@ -21,7 +21,7 @@ const veggieArray = [
   { name: "Tomato", price: "2", img: p1 },
   { name: "Red Pepper", price: "4", img: p5 },
   { name: "Pumpkin", price: "8", img: p3 },
-  { name: "Potatoe", price: "1", img: p4 },
+  { name: "Potato", price: "1", img: p4 },
   { name: "Cabbage", price: "4", img: p6 },
   { name: "Eggplant", price: "4", img: p2 },
 ];
