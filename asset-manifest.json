@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/segment-farms-demo/static/css/main.f1ff532f.css",
+    "main.js": "/segment-farms-demo/static/js/main.ca49be34.js",
+    "static/js/787.7cd36c21.chunk.js": "/segment-farms-demo/static/js/787.7cd36c21.chunk.js",
+    "static/media/p1.png": "/segment-farms-demo/static/media/p1.e9f171cc7281e9eff70f.png",
+    "static/media/p5.png": "/segment-farms-demo/static/media/p5.d633e213d1770f075bde.png",
+    "static/media/p6.png": "/segment-farms-demo/static/media/p6.e117840ed585ddc31fb9.png",
+    "static/media/p4.png": "/segment-farms-demo/static/media/p4.04e942eb1040b353b3cf.png",
+    "static/media/p3.png": "/segment-farms-demo/static/media/p3.433c1cd9576c7f6014ca.png",
+    "static/media/p2.png": "/segment-farms-demo/static/media/p2.c535e6b3c3ae89ee4ceb.png",
+    "index.html": "/segment-farms-demo/index.html",
+    "main.f1ff532f.css.map": "/segment-farms-demo/static/css/main.f1ff532f.css.map",
+    "main.ca49be34.js.map": "/segment-farms-demo/static/js/main.ca49be34.js.map",
+    "787.7cd36c21.chunk.js.map": "/segment-farms-demo/static/js/787.7cd36c21.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f1ff532f.css",
+    "static/js/main.ca49be34.js"
+  ]
+}
