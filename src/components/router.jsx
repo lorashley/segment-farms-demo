@@ -12,7 +12,7 @@ import FullCart from "../pages/fullCart";
  * We use Switch to only render one route at a time https://github.com/molefrog/wouter#switch-
  */
 
-export default () => (
+const router =  () => (
   <Switch>
     <Route path="/" component={Home} />
     <Route path="/dashboard" component={Home} />
@@ -20,3 +20,5 @@ export default () => (
     <Route path="/cart" component={FullCart} />
   </Switch>
 );
+
+export default router
