@@ -1,6 +1,7 @@
 {
   "name": "shrute-farms",
   "version": "0.1.0",
+  "homepage": "https://lorashley.github.io/segment-farms-demo",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -18,6 +19,8 @@
     "wouter": "^2.8.0-alpha.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
